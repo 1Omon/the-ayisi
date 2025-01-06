@@ -1,101 +1,118 @@
 import Image from "next/image";
+import Link from "next/link";
 
+const links = [
+  {
+    href: "#home",
+    label: "Home",
+  },
+  {
+    href: "#about",
+    label: "About",
+  },
+  {
+    href: "#projects",
+    label: "Projects",
+  },
+  {
+    href: "#contact",
+    label: "Contact",
+  },
+];
+
+const interests = [
+  {
+    image: "/",
+    label: "Software Engineering",
+  },
+  {
+    image: "/",
+    label: "Entrepreneurship",
+  },
+  {
+    image: "",
+    label: "Product Management",
+  },
+  {
+    image: "/",
+    label: "Systems",
+  },
+];
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="bg-background">
+      <div className="w-full h-16 px-20 flex items-center justify-between sticky top-0 left-0">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src={"/ayisi-logo.svg"}
+          alt="mylogo"
+          width={150}
+          height={45}
+          className="w-[125px] h-[40px]"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="">
+          {links.map((link, index) => (
+            <Link key={index} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+      <div className="w-full h-screen flex items-center justify-center gap-4">
+        <Image
+          src={"/solo.svg"}
+          alt="image"
+          width={350}
+          height={400}
+          className=""
+        />
+        <span className="w-[35%] space-y-2">
+          <h3 className="text-xl uppercase font-semibold text-accent">
+            Hi there, I am Solomon from Ghana
+          </h3>
+          <h1 className="text-6xl font-extrabold leading-none">
+            Can provide you with an unfair advantage right from the start!
+          </h1>
+          <p className="leading-tight">
+            I have experience in software engineering, product management,
+            marketing, and startup creation which also requires strategic
+            planning and business development skillsets.
+          </p>
+          <button className="h-9 w-24 rounded-full bg-accent hover:bg-accent/90">
+            Hire Me!
+          </button>
+        </span>
+      </div>
+      <div className="flex w-3/5 mx-auto h-[70vh]">
+        <span className="">
+          <h3 className="text-xl font-semibold">About Me</h3>
+          <p className="">
+            A Computer Science graduate with a passion for coding that began at
+            age 16. Over the years, I've had the privilege of working on a
+            variety of exciting projects across industries such as healthcare,
+            real estate, and education. I take pride in contributing
+            meaningfully to the success of every project I’m involved in, often
+            stepping into a versatile generalist role to ensure team goals are
+            met.
+          </p>
+          <button className="h-9 w-24 rounded-full bg-transparent hover:bg-white border border-white hover:text-accent hover:border-accent hover:border-2">
+            Hire Me!
+          </button>
+        </span>
+        <div className="">
+          {interests.map((item, index) => (
+            <div key={index}>
+              <Image
+                src={item.image}
+                alt="image"
+                width={45}
+                height={45}
+                className=""
+              />
+              {item.label}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
