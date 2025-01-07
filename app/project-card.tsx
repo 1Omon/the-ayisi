@@ -14,7 +14,13 @@ const ProjectCard = ({title, summary, image, stack}: IProjectCard) => {
         <Image src={image} alt='image' width={300} height={300} />
         <h2 className="text-2xl font-semibold">{title}</h2>
         <p className="">{summary}</p>
-        <span className=""></span>
+        <span className="">
+            {
+                stack.map((tool,index)=>(
+                    <span className="" key={index}>{tool}</span>
+                ))
+            }
+        </span>
     </div>
   )
 }

@@ -104,10 +104,10 @@ export default function Home() {
           <h3 className="text-2xl font-semibold">About Me</h3>
           <p className="">
             A Computer Science graduate with a passion for coding that began at
-            age 16. Over the years, I've had the privilege of working on a
+            age 16. Over the years, I&apos;ve had the privilege of working on a
             variety of exciting projects across industries such as healthcare,
             real estate, and education. I take pride in contributing
-            meaningfully to the success of every project I’m involved in, often
+            meaningfully to the success of every project I&apos;m involved in, often
             stepping into a versatile generalist role to ensure team goals are
             met.
           </p>
