@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ProjectCard from "./project-card";
 
 const links = [
   {
@@ -22,26 +23,36 @@ const links = [
 
 const interests = [
   {
-    image: "/",
+    image: "/se.png",
     label: "Software Engineering",
   },
   {
-    image: "/",
+    image: "/techpreneur.png",
     label: "Entrepreneurship",
   },
   {
-    image: "",
+    image: "/pm.png",
     label: "Product Management",
   },
   {
-    image: "/",
-    label: "Systems",
+    image: "/market-strategy.png",
+    label: "Marketing",
   },
 ];
+
+const projects = [
+  {
+    title: "Virtual Healthcare Delivery System",
+    summary: "",
+    image: "",
+    stack: [],
+  },
+];
+
 export default function Home() {
   return (
     <div className="bg-background">
-      <div className="w-full h-16 px-20 flex items-center justify-between sticky top-0 left-0">
+      <header className="w-4/5 mx-auto h-16 px-10 flex items-center justify-between sticky top-0 left-0 bg-background">
         <Image
           src={"/ayisi-logo.svg"}
           alt="mylogo"
@@ -49,15 +60,18 @@ export default function Home() {
           height={45}
           className="w-[125px] h-[40px]"
         />
-        <div className="">
+        <div className="flex gap-4">
           {links.map((link, index) => (
             <Link key={index} href={link.href}>
               {link.label}
             </Link>
           ))}
         </div>
-      </div>
-      <div className="w-full h-screen flex items-center justify-center gap-4">
+      </header>
+      <section
+        id="home"
+        className="w-full h-screen flex items-center justify-center gap-4"
+      >
         <Image
           src={"/solo.svg"}
           alt="image"
@@ -81,10 +95,13 @@ export default function Home() {
             Hire Me!
           </button>
         </span>
-      </div>
-      <div className="flex w-3/5 mx-auto h-[70vh]">
-        <span className="">
-          <h3 className="text-xl font-semibold">About Me</h3>
+      </section>
+      <section
+        id="about"
+        className="flex w-4/5 mx-auto h-[50vh] items-center justify-between gap-x-6"
+      >
+        <span className="w-1/2 space-y-2">
+          <h3 className="text-2xl font-semibold">About Me</h3>
           <p className="">
             A Computer Science graduate with a passion for coding that began at
             age 16. Over the years, I've had the privilege of working on a
@@ -98,9 +115,12 @@ export default function Home() {
             Hire Me!
           </button>
         </span>
-        <div className="">
+        <div className="w-1/3 h-[300px] grid grid-cols-2 gap-4 rounded-lg ">
           {interests.map((item, index) => (
-            <div key={index}>
+            <div
+              key={index}
+              className="bg-foreground flex flex-col items-center justify-center gap-y-2"
+            >
               <Image
                 src={item.image}
                 alt="image"
@@ -108,11 +128,20 @@ export default function Home() {
                 height={45}
                 className=""
               />
-              {item.label}
+              <p className="text-sm font-bold text-center">{item.label}</p>
             </div>
           ))}
         </div>
-      </div>
+      </section>
+      <section id="project" className="w-4/5 grid-cols-2 grid gap-6">
+        <h3 className="text-2xl font-semibold">Exciting Project</h3>
+        {projects.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
+      </section>
+      <footer className="flex items-center justify-center px-10 bg-foreground p-2 text-accent">
+        Ayisi Solomon Annan | Copyright @ {new Date().getFullYear()}
+      </footer>
     </div>
   );
 }
