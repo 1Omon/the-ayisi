@@ -47,6 +47,36 @@ const projects = [
     image: "",
     stack: [],
   },
+  {
+    title: "Basic School Management System",
+    summary: "",
+    image: "",
+    stack: [],
+  },
+  {
+    title: "Preproom",
+    summary: "",
+    image: "",
+    stack: [],
+  },
+  {
+    title: "DeyGo",
+    summary: "",
+    image: "",
+    stack: [],
+  },
+  {
+    title: "Xcuxion App",
+    summary: "",
+    image: "",
+    stack: [],
+  },
+  {
+    title: "TertiaryGuide Applicant Portal",
+    summary: "",
+    image: "",
+    stack: [],
+  },
 ];
 
 export default function Home() {
@@ -107,9 +137,9 @@ export default function Home() {
             age 16. Over the years, I&apos;ve had the privilege of working on a
             variety of exciting projects across industries such as healthcare,
             real estate, and education. I take pride in contributing
-            meaningfully to the success of every project I&apos;m involved in, often
-            stepping into a versatile generalist role to ensure team goals are
-            met.
+            meaningfully to the success of every project I&apos;m involved in,
+            often stepping into a versatile generalist role to ensure team goals
+            are met.
           </p>
           <button className="h-9 w-24 rounded-full bg-transparent hover:bg-white border border-white hover:text-accent hover:border-accent hover:border-2">
             Hire Me!
@@ -133,11 +163,13 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section id="project" className="w-4/5 grid-cols-2 grid gap-6">
+      <section id="project" className="w-4/5 mx-auto ">
         <h3 className="text-2xl font-semibold">Exciting Project</h3>
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
+        <div className="grid-cols-2 grid gap-6">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
+        </div>
       </section>
       <footer className="flex items-center justify-center px-10 bg-foreground p-2 text-accent">
         Ayisi Solomon Annan | Copyright @ {new Date().getFullYear()}
